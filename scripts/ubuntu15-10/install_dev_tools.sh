@@ -11,4 +11,5 @@ sudo apt-get -y install \
     zsh                 \
     python-dev          \
     python3-dev         \
+    npm                 \
     sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
