@@ -1,6 +1,7 @@
 #!/bin/bash
 
 sudo apt-get -y install \
+    vim                 \
     build-essential     \
     clang               \
     clang-format-3.7    \
