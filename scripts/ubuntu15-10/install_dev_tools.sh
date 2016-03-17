@@ -11,5 +11,7 @@ sudo apt-get -y install \
     cmake               \
     zsh                 \
     python-dev          \
-    python3-dev         \
-    sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+    python3-dev
+
+# Install oh-my-zsh    
+sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
