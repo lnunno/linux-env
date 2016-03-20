@@ -1,0 +1,16 @@
+# remap prefix to Control + a
+set -g prefix C-a
+unbind C-b
+bind C-a send-prefix
+
+# quick pane cycling
+unbind ^A
+bind ^A select-pane -t :.+
+
+# Enable mouse use
+set -g mouse on
+bind -n WheelUpPane if-shell -F -t = "#{mouse_any_flag}" "send-keys -M" "if -Ft= '#{pane_in_mode}' 'send-keys -M' 'select-pane -t=; copy-mode -e; send-keys -M'"
+bind -n WheelDownPane select-pane -t= \; send-keys -M
+
+bind e setw synchronize-panes on
+bind E setw synchronize-panes off
