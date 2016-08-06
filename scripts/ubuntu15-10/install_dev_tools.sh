@@ -12,7 +12,10 @@ sudo apt-get -y install \
     git                 \
     cmake               \
     zsh                 \
+    python-pip          \
     python-dev          \
+    python3-pip         \
+    virtualenv          \
     python3-dev
 
 # Install oh-my-zsh    
