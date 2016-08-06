@@ -3,6 +3,7 @@ jupyter
 cherrypy
 jinja2
 numpy
-matplotlib
 pandas
 flask
+matplotlib
+

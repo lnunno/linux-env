@@ -20,7 +20,7 @@ sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/i
 
 # Install fuzzyfinder (fzf)
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-~/.fzf/install
+~/.fzf/install --all
 
 # Install Node.js
 curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -
