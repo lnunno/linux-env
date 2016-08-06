@@ -13,10 +13,9 @@ sudo apt-get -y install \
     cmake               \
     zsh                 \
     python-pip          \
-    python-venv         \
     python-dev          \
-    python3.5-pip       \
-    python3.5-venv      \
+    python3-pip         \
+    virtualenv          \
     python3-dev
 
 # Install oh-my-zsh    
