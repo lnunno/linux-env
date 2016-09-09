@@ -15,6 +15,9 @@ dependencies:
           visual_studio_code_settings: {
             "editor.rulers": [120],
             "editor.fontSize": 16,
+            "editor.tabSize": 4,
+            "editor.insertSpaces": true,
+            "editor.detectIndentation": false,
             "extensions.autoUpdate": true,
             "files.associations": {
               "Vagrantfile": "ruby",

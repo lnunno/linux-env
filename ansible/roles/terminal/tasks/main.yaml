@@ -4,6 +4,7 @@
         - build-essential
         - vim
         - git
+        - kdiff3
         - zsh
         - tmux
 - git_config:
@@ -13,6 +14,10 @@
 - git_config:
     name: push.default
     value: simple
+    scope: global
+- git_config:
+    name: merge.tool
+    value: kdiff3
     scope: global
 - git_config:
     name: user.name
