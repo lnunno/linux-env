@@ -1,3 +1,4 @@
 ---
 dependencies:
     - role: mrlesmithjr.oracle-java8
+    - role: gantsign.maven
