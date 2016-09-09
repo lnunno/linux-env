@@ -7,7 +7,7 @@ dependencies:
         - username: lnunno
           visual_studio_code_extensions:
             - ms-vscode.cpptools
-            - robertohuertasm.vscode-icons
+            # - robertohuertasm.vscode-icons
             - lukehoban.Go
             - streetsidesoftware.code-spell-checker
             - wholroyd.jinja
@@ -15,6 +15,7 @@ dependencies:
           visual_studio_code_settings: {
             "editor.rulers": [120],
             "editor.fontSize": 16,
+            "extensions.autoUpdate": true,
             "files.associations": {
               "Vagrantfile": "ruby",
               "*.jsonschema": "json"

@@ -6,3 +6,19 @@
         - git
         - zsh
         - tmux
+- git_config:
+    name: core.editor
+    value: vim
+    scope: global
+- git_config:
+    name: push.default
+    value: simple
+    scope: global
+- git_config:
+    name: user.name
+    value: Lucas Nunno
+    scope: global
+- git_config:
+    name: user.email
+    value: lucasnunno@gmail.com
+    scope: global
