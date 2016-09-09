@@ -7,3 +7,14 @@
     - python3-pip
     - virtualenv
     - python3-dev
+- copy:
+    src: requirements.txt
+    dest: /tmp/requirements.txt
+- name: Install common python modules.
+  pip:
+    requirements: /tmp/requirements.txt
+    virtualenv_python: "{{ item.py }}"
+    virtualenv: "{{ home }}/.virtualenvs/{{ item.name }}"
+  with_items:
+    - { py: python2.7, name: py27 }
+    - { py: python3.5, name: py3 }

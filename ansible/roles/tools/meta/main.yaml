@@ -2,6 +2,9 @@
 dependencies:
   # - role: alban.andrieu.eclipse
   # - role: dotstrap.fzf
+  # Installs Eclipse.
+  # - role: caarlos0.eclipse
+  # Installs Visual Studio Code.
   - role: gantsign.visual-studio-code
     users:
         - username: lnunno

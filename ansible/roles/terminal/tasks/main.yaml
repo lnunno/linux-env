@@ -7,6 +7,8 @@
         - kdiff3
         - zsh
         - tmux
+        - bzip2
+        - unzip
 - git_config:
     name: core.editor
     value: vim
@@ -21,9 +23,9 @@
     scope: global
 - git_config:
     name: user.name
-    value: Lucas Nunno
+    value: "{{ name }}"
     scope: global
 - git_config:
     name: user.email
-    value: lucasnunno@gmail.com
+    value: "{{ email }}"
     scope: global

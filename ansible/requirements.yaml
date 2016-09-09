@@ -2,8 +2,10 @@
 - src: gantsign.visual-studio-code
 - src: mrlesmithjr.oracle-java8
 - src: gantsign.maven
+- src: joshualund.golang
 
 # Packages that aren't working.
+# - src: caarlos0.eclipse
 # - src: dotstrap.fzf
 # - src: glennr.oh-my-zsh
 # - src: alban.andrieu.eclipse

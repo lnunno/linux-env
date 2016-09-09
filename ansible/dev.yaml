@@ -1,9 +1,15 @@
 ---
 - hosts: all
+  vars:
+    username: lnunno
+    home: "/home/{{ username }}"
+    name: Lucas Nunno
+    email: lucasnunno@gmail.com
   roles:
     - terminal
     - cpp
     - python
     - java
     - tools
+    - joshualund.golang # Golang
   become: true
