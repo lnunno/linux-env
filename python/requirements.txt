@@ -8,3 +8,6 @@ jupyter
 jinja2
 cherrypy
 
+flake8
+pylint
+
