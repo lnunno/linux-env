@@ -1,0 +1,9 @@
+- name: Ensure build tools are available.
+  apt: name={{ item }} state=latest
+  with_items:
+    # Python Tools
+    - python-dev
+    - python-pip
+    - python3-pip
+    - virtualenv
+    - python3-dev

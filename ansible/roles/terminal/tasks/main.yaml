@@ -1,0 +1,8 @@
+- name: Ensure build tools are available.
+  apt: name={{ item }} state=latest
+  with_items:
+        - build-essential
+        - vim
+        - git
+        - zsh
+        - tmux
