@@ -12,7 +12,7 @@ Vagrant.configure(2) do |config|
 
   # Every Vagrant development environment requires a box. You can search for
   # boxes at https://atlas.hashicorp.com/search.
-  config.vm.box = "ubuntu/xenial64"
+  config.vm.box = "bento/ubuntu-16.04"
 
   # Disable automatic box update checking. If you disable this, then
   # boxes will only be checked for updates when the user runs
@@ -71,27 +71,18 @@ Vagrant.configure(2) do |config|
 
   # Custom shell provisioning.
   config.vm.provision "shell", inline: <<-SHELL
-    sudo apt-get -y update
+    sudo apt -y update
 
-    sudo apt-get -y install linux-headers-generic build-essential dkms vim unzip zsh
-
-    # Virtualbox Guest Additions.
-    wget http://download.virtualbox.org/virtualbox/5.0.12/VBoxGuestAdditions_5.0.12.iso
-    sudo mkdir /media/VBoxGuestAdditions
-    sudo mount -o loop,ro VBoxGuestAdditions_5.0.12.iso /media/VBoxGuestAdditions
-    sudo sh /media/VBoxGuestAdditions/VBoxLinuxAdditions.run
-    rm VBoxGuestAdditions_5.0.12.iso
-    sudo umount /media/VBoxGuestAdditions
-    sudo rmdir /media/VBoxGuestAdditions
+    sudo apt -y install linux-headers-generic build-essential dkms vim git unzip zsh
 
   SHELL
 
   #
   # Run Ansible from the Vagrant Host
   #
-  config.vm.provision "ansible" do |ansible|
-    ansible.playbook = "ansible/dev.yaml"
-  end
+  # config.vm.provision "ansible" do |ansible|
+  #   ansible.playbook = "ansible/dev.yaml"
+  # end
 
   # Custom docker provisioning.
   # See: https://docs.vagrantup.com/v2/provisioning/docker.html
