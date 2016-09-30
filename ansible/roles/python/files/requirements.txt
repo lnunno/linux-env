@@ -3,8 +3,4 @@ virtualenv
 virtualenvwrapper
 ipython
 jupyter
-# numpy
-# matplotlib
-# pandas
-# jinja2
-# cherrypy
+
