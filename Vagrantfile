@@ -43,13 +43,35 @@ Vagrant.configure(2) do |config|
   # backing providers for Vagrant. These expose provider-specific options.
   # Example for VirtualBox:
   #
-  config.vm.provider "virtualbox" do |vb|
-    # Display the VirtualBox GUI when booting the machine
-    vb.gui = true
-  
-    # Customize the amount of memory on the VM:
-    vb.memory = "4024"
+  config.vm.provider :virtualbox do |vb|
+     vb.memory = 4024
+     vb.gui = true
+     vb.name = "Ubuntu 16.04 64-bit"
+    
+     # modifyvm
+     vb.customize [
+        "modifyvm", :id, 
+        "--accelerate3d", "on",
+        "--vram", "256",
+     ]   
+
+     # Add a DVD drive.
+     vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port", "1", "--device", "0", "--type", "dvddrive", "--medium", "emptydrive"]    
+     vb.customize ["modifyvm", :id, "--boot1", "disk", "--boot2", "dvd"]
+
+     # controlvm
+     vb.customize "post-boot", [
+        "controlvm", :id, 
+        "setvideomodehint", "1920", "1080", "32",
+     ]   
+
+     vb.customize "post-boot", [
+        "controlvm", :id, 
+        "clipboard", "bidirectional",
+     ]   
+
   end
+
   #
   # View the documentation for the provider you are using for more
   # information on available options.
@@ -73,7 +95,9 @@ Vagrant.configure(2) do |config|
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt -y update
 
-    sudo apt -y install linux-headers-generic build-essential dkms vim git unzip zsh
+    sudo apt -y install linux-headers-generic build-essential dkms vim git unzip zsh \
+    					virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11 \
+    					python-pip
 
   SHELL
 
@@ -86,7 +110,8 @@ Vagrant.configure(2) do |config|
 
   # Custom docker provisioning.
   # See: https://docs.vagrantup.com/v2/provisioning/docker.html
-  # config.vm.provision "docker",
-  #   images: ["ubuntu"]
+  # Install docker and pull common images.
+  config.vm.provision "docker",
+    images: ["ubuntu", "centos"]
 
 end
