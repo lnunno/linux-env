@@ -9,6 +9,7 @@
         - tmux
         - bzip2
         - unzip
+        - autojump
 - git_config:
     name: core.editor
     value: vim
@@ -29,3 +30,10 @@
     name: user.email
     value: "{{ email }}"
     scope: global
+
+# Install fzf
+- git:
+    repo: https://github.com/junegunn/fzf.git
+    dest: "{{ home }}/.fzf"
+    depth: 1
+
