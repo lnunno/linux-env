@@ -19,7 +19,6 @@ Vagrant.configure(2) do |config|
      vb.customize ["storageattach", :id, "--storagectl", "IDE Controller", "--port", "1", "--device", "0", "--type", "dvddrive", "--medium", "emptydrive"]    
      vb.customize ["modifyvm", :id, "--boot1", "disk", "--boot2", "dvd"]
 
-     # controlvm
      vb.customize "post-boot", [
         "controlvm", :id, 
         "setvideomodehint", "1920", "1080", "32",
@@ -32,12 +31,21 @@ Vagrant.configure(2) do |config|
 
   end
 
+  # Install essentials   
   config.vm.provision "shell", inline: <<-SHELL
     sudo apt -y update
 
     sudo apt -y install linux-headers-generic build-essential dkms vim git unzip zsh \
-    					virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11 \
-    					python-pip
+                        virtualbox-guest-dkms virtualbox-guest-utils virtualbox-guest-x11 \
+                        python-pip
+
+  SHELL
+
+  # Install Zeal doc browser
+  config.vm.provision "shell", inline: <<-SHELL
+    sudo add-apt-repository ppa:zeal-developers/ppa
+    sudo apt-get update
+    sudo apt-get install zeal
 
   SHELL
 
