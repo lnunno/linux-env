@@ -22,6 +22,9 @@ dependencies:
             "editor.insertSpaces": true,
             "editor.detectIndentation": false,
             "extensions.autoUpdate": true,
+            "files.autoSave": "afterDelay",
+            "files.autoSaveDelay": 1000,
+            "files.trimTrailingWhitespace": true,
             "files.associations": {
               "Vagrantfile": "ruby",
               "*.jsonschema": "json"

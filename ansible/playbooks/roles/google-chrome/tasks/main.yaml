@@ -1,0 +1,17 @@
+# Add specified repository into sources list using specified filename.
+- name: Add Google Chrome Apt Repository
+  apt_repository:
+    repo: deb http://dl.google.com/linux/chrome/deb/ stable main
+    state: present
+    filename: 'google-chrome'
+
+- name: Add Google Chrome Apt Key
+  apt_key:
+    url: "https://dl.google.com/linux/linux_signing_key.pub"
+    state: present
+
+- name: Install Google Chrome
+  apt:
+    name: google-chrome-stable
+    update_cache: yes
+    state: present
