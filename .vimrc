@@ -35,7 +35,6 @@ filetype plugin indent on    " required
 
 colorscheme wombat256mod
 set number              " Number the lines of the file
-
 set autoindent
 set shiftwidth=4
 set softtabstop=4
@@ -74,3 +73,21 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+" Additions from: https://github.com/greg0ire/more-instantly-better-vim/blob/master/additions_for_your_.vimrc
+
+"====[ Highlight the first character in a line that goes over 100 characters ]======
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%101v', 100)
+
+"====[ Swap : and ; to make colon commands easier to type ]======
+
+nnoremap  ;  :
+nnoremap  :  ;
+
+"====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
+
+exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
+set list
+
