@@ -14,22 +14,24 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Rust language plugin
+Plugin 'rust-lang/rust.vim'
+
+" Runs linters on a number of languages
+Plugin 'scrooloose/syntastic'
+
+" Lots of predefined colorschemes including wombat and monokai
 Bundle 'flazz/vim-colorschemes'
+
+" Editorconfig plugin
+Plugin 'editorconfig/editorconfig-vim'
+
+" This needs to be compiled/installed explicitly in ~/.vim/bundles/youcompleteme
+Plugin 'valloric/youcompleteme'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" To ignore plugin indent changes, instead use:
-"filetype plugin on
-"
-" Brief help
-" :PluginList       - lists configured plugins
-" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
-" :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
-"
-" see :h vundle for more details or wiki for FAQ
-" Put your non-Plugin stuff after this line
 
 colorscheme wombat256mod
 set number              " Number the lines of the file
@@ -55,7 +57,7 @@ set hlsearch            " Enable search highlighting
 " Disable auto comment
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
-" Change where vim automatically backs up files to /tmp
+" Change where vim automatically backs up files to
 set backup
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set backupskip=/tmp/*,/private/tmp/*
