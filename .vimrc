@@ -81,13 +81,10 @@ let g:syntastic_check_on_wq = 0
 highlight ColorColumn ctermbg=magenta
 call matchadd('ColorColumn', '\%101v', 100)
 
-"====[ Swap : and ; to make colon commands easier to type ]======
-
-nnoremap  ;  :
-nnoremap  :  ;
+"====[ Map ; to : to make commands easier to type ]======
+nmap ; :
 
 "====[ Make tabs, trailing whitespace, and non-breaking spaces visible ]======
-
 exec "set listchars=tab:\uBB\uBB,trail:\uB7,nbsp:~"
 set list
 
