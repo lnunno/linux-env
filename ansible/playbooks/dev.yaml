@@ -10,6 +10,6 @@
     - cpp
     - python
     - java
-    - tools
-    - joshualund.golang # Golang
+    - vscode
+    - joshualund.golang
   become: true

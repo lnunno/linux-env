@@ -40,6 +40,6 @@
     depth: 1
 
 - name: Download zsh antigen
-   get_url:
+  get_url:
     url: https://cdn.rawgit.com/zsh-users/antigen/v1.3.2/bin/antigen.zsh
     dest: ~/antigen.sh
