@@ -10,6 +10,8 @@
         - bzip2
         - unzip
         - autojump
+        - xclip
+        - zsh-antigen
 - git_config:
     name: core.editor
     value: vim
@@ -31,9 +33,13 @@
     value: "{{ email }}"
     scope: global
 
-# Install fzf
-- git:
+- name: Install fzf
+  git:
     repo: https://github.com/junegunn/fzf.git
     dest: "{{ home }}/.fzf"
     depth: 1
 
+- name: Download zsh antigen
+   get_url:
+    url: https://cdn.rawgit.com/zsh-users/antigen/v1.3.2/bin/antigen.zsh
+    dest: ~/antigen.sh
