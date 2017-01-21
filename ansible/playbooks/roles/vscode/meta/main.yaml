@@ -3,27 +3,12 @@ dependencies:
   # Installs Visual Studio Code.
   - role: gantsign.visual-studio-code
     users:
-        - username: lnunno
-          visual_studio_code_extensions:
-            - ms-vscode.cpptools
-            - robertohuertasm.vscode-icons
-            - lukehoban.Go
-            - streetsidesoftware.code-spell-checker
-            - wholroyd.jinja
-            - donjayamanne.python
-            - EditorConfig.EditorConfig
-          visual_studio_code_settings: {
-            "editor.rulers": [100],
-            "editor.fontSize": 16,
-            "editor.tabSize": 4,
-            "editor.insertSpaces": true,
-            "editor.detectIndentation": false,
-            "extensions.autoUpdate": true,
-            "files.autoSave": "afterDelay",
-            "files.autoSaveDelay": 1000,
-            "files.trimTrailingWhitespace": true,
-            "files.associations": {
-              "Vagrantfile": "ruby",
-              "*.jsonschema": "json"
-            }
-          }
+      - username: lnunno
+        visual_studio_code_extensions:
+          - ms-vscode.cpptools
+          - robertohuertasm.vscode-icons
+          - lukehoban.Go
+          - streetsidesoftware.code-spell-checker
+          - wholroyd.jinja
+          - donjayamanne.python
+          - EditorConfig.EditorConfig
