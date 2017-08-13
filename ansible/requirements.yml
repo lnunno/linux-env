@@ -1,0 +1,4 @@
+# Install a role from the Ansible Galaxy
+- src: git@github.com:lnunno/lucas-role.git
+  scm: git
+- src: geerlingguy.docker
