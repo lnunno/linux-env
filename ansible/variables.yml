@@ -1,0 +1,9 @@
+users:
+  - username: lucas
+    visual_studio_code_extensions:
+      - ms-vscode.cpptools
+      - robertohuertasm.vscode-icons
+      - lukehoban.Go
+      - streetsidesoftware.code-spell-checker
+      - donjayamanne.python
+      - EditorConfig.EditorConfig
